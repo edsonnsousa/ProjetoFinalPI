@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset = "UTF-8"/>
+	<meta name="viewport" content="width=device-width">
+	<title></title>
+	<link rel="stylesheet" 
+		href="/media/imagens/styles/bootstrap.css"/>
+	<link rel="stylesheet" 
+		href="/media/imagens/styles/signin.css"/>
+
+</head>
+<body>
+	<div class="container">
+		
+	
+	<form action="/login/" class="form-signin" role="form" method="post">
+		<input type="hidden" name="csrfmiddlewaretoken" value="vKZYxJ7eXRC0Egfkgi8eCQC8oxlLB8ksqSlKw5TcUXzK56ztV3BkHHu3o39X8lVf">
+		<h2 class="form-signin-heading">Login</h2>
+
+		<input type="text" class="form-control" id="id_username" name="username" placeholder="Nome" required autofocus>
+
+		<input type="password" class="form-control" id="id_password" name="password" placeholder="Senha" required>
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Login</button>
+
+		<input type="hidden" name="next" value="">
+
+		
+
+		<a href="/registrar/">Registre-se</a>
+		<a class="pull-right" href="/password_reset/">Esqueci a senha</a>
+		
+	</form>
+
+
+	</div>
+</body>
+</html>
