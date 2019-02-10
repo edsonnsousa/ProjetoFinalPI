@@ -1,40 +1,31 @@
+{% extends "base_usuario.html" %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset = "UTF-8"/>
-	<meta name="viewport" content="width=device-width">
-	<title></title>
-	<link rel="stylesheet" 
-		href="/media/imagens/styles/bootstrap.css"/>
-	<link rel="stylesheet" 
-		href="/media/imagens/styles/signin.css"/>
+{% block body %}
 
-</head>
-<body>
-	<div class="container">
-		
-	
-	<form action="/login/" class="form-signin" role="form" method="post">
-		<input type="hidden" name="csrfmiddlewaretoken" value="vKZYxJ7eXRC0Egfkgi8eCQC8oxlLB8ksqSlKw5TcUXzK56ztV3BkHHu3o39X8lVf">
-		<h2 class="form-signin-heading">Login</h2>
+	<form action="{% url 'login' %}" class="form-signin" role="form" method="post">
+		{% csrf_token %}
+		<h2 class="form-signin-heading">Entrar</h2>
 
 		<input type="text" class="form-control" id="id_username" name="username" placeholder="Nome" required autofocus>
 
 		<input type="password" class="form-control" id="id_password" name="password" placeholder="Senha" required>
 
-		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Login</button>
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Entrar</button>
 
-		<input type="hidden" name="next" value="">
+		<input type="hidden" name="next" value="{{ next }}">
 
-		
+		{% if form.errors %}
+		<div class="alert alert-danger">
+			<button type="button" class="close"
+				data-dismiss="alert" aria-hidden="true">x
+			</button>
+			{{ form.non_field_errors }}
+		</div>
+		{% endif %}
 
-		<a href="/registrar/">Registre-se</a>
-		<a class="pull-right" href="/password_reset/">Esqueci a senha</a>
-		
+		<a href="{% url 'registrar' %}">Registre-se</a>
+		<a class="pull-right" href="{% url 'password_reset' %}">Esqueci a senha</a>
+
 	</form>
 
-
-	</div>
-</body>
-</html>
+{% endblock %}

@@ -32,13 +32,13 @@ class AtivarContaForm(forms.Form):
 
 		user_exists = User.objects.filter(username=self.cleaned_data['nome']).exists()
 		if not user_exists:
-			self.adiciona_erro('Nome de usuário não existe')
+			self.adiciona_erro('Nome de usuário inexistente')
 			valid = False
 		
 		else:
 			usuario = User.objects.get(username=self.cleaned_data['nome'])
 			if not usuario.check_password(self.cleaned_data['password']):
-				self.adiciona_erro('Usuario ou senha incorreto')
+				self.adiciona_erro('Usuário e/ou senha incorreto')
 				valid = False
 
 		return valid
