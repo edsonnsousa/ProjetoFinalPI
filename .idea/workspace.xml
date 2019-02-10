@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/connectedin/urls.py" line="24" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f548ed05-c14d-46de-9f97-7f9c1bbed95b" name="Default" comment="Atualização das funções que restavam" />
+    <list default="true" id="f548ed05-c14d-46de-9f97-7f9c1bbed95b" name="Default" comment="Atualização das funções que restavam">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +217,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="width" value="980" />
     <option name="height" value="1031" />
@@ -237,6 +239,11 @@
               <item name="ProjetoFinalPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetoFinal" type="462c0819:PsiDirectoryNode" />
               <item name="connectedin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetoFinalPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetoFinal" type="462c0819:PsiDirectoryNode" />
+              <item name="imagens" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjetoFinalPI" type="b2602c69:ProjectViewProjectNode" />
@@ -540,7 +547,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2630757" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2630757" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -552,8 +559,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49960968" visible="true" weight="0.54266214" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003903" side_tool="true" visible="true" weight="0.54266214" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960968" visible="true" weight="0.5853242" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003903" side_tool="true" weight="0.54266214" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
