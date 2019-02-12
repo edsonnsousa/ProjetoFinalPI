@@ -6,7 +6,7 @@
             <p {% if message.tags == "success" %}  class="alert alert-info">{{ message }}
             {% endif %}
             </p>
-            <li{% if message.tags %} class="{{ message.tags }}"
+            <li{% if message.tags == "danger" %} class="alert-danger"{{ message }}
             {% endif %}>{{ message }}</li>
         {% endfor %}
     {% endif %}
@@ -125,10 +125,8 @@
                     id="id_postagem"
                     required="required"
                     placeholder="Conte-nos"
-                    style="min-width: 555px; min-height: 50px; max-width: 550px; max-height: 50px;"
-                >
+                    style="min-width: 555px; min-height: 50px; max-width: 550px; max-height: 50px;">
                 <input type = "file" style = "margin-left:0%;" placeholder = "Picture" name = "imagem_postagem"/>
-
                 <button class="btn btn-primary pull-right" type = "submit" value = "upload" >Enviar</button>
             </form>
 
@@ -163,7 +161,7 @@
 
                     <div class="col-lg-10">
 
-                        <h3>{{ postagem.dono }}</h3>
+                        <h4>{{ postagem.dono }}</h4>
                     </div>
                 </div>
                     <p>{{ postagem }}</p>
@@ -222,12 +220,17 @@
 
                     {% endif %}
 
-                    <h5>{{postagem.data_publicacao}}</h5>
-                </li>
+                    <h6>{{postagem.data_publicacao}}</h6>
 
+
+                    {% if perfil_logado.id not in postagem.curtidas %}
+                       <center> <a href="{% url 'curtir' postagem.id %}">Gostei\☺/</a></center>
+                    {% else %}
+                        <center><a href="{% url 'descurtir' postagem.id %}">Não gostei ☹</a></center>
+                    {% endif %}
+                        <center>| {{ postagem.total_curtidas }} |</center>
                 {% endfor %}
 
-                
             </ul>
 
             {% else %}
@@ -286,7 +289,7 @@
                 </div>
             </div>
     </div>
-    
+
 
     <div class="col-lg-3">
         <aside>

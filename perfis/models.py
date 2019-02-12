@@ -153,6 +153,40 @@ class Postagem(models.Model):
     def excluir_postagem(self):
         self.delete()
 
+    @property
+    def curtidas(self):
+        lista_curtidas = []
+        for i in self.minhas_curtidas.all():
+            lista_curtidas.append(i.curtidor.id)
+
+        return lista_curtidas
+
+    @property
+    def total_curtidas(self):
+        curtidas = Curtida.objects.filter(post=self).exists()
+
+        if curtidas:
+            return Curtida.objects.filter(post=self).count
+        return 0
+
+class Comentario(models.Model):
+    autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='meu_comentario')
+    post = models.ForeignKey(Postagem, on_delete=models.CASCADE, related_name='meu_comentario')
+    texto = models.CharField(max_length=400, null=False)
+
+    def __str__(self):
+        return self.texto
+
+    def exluir(self):
+        self.delete()
+
+
+class Curtida(models.Model):
+    post = models.ForeignKey(Postagem, on_delete=models.CASCADE, related_name='minhas_curtidas')
+    curtidor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='curti')
+
+    def descurtir(self):
+        self.delete()
 
 class Bloqueio(models.Model):
     bloqueador = models.ForeignKey(Perfil, on_delete = models.CASCADE, related_name = 'bloqueador')
@@ -163,3 +197,5 @@ class Bloqueio(models.Model):
 
     def desbloquear(self):
         self.delete()
+
+

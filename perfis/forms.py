@@ -46,3 +46,7 @@ class AtivarContaForm(forms.Form):
 	def adiciona_erro(self, message):
 		errors = self._errors.setdefault(forms.forms.NON_FIELD_ERRORS, forms.utils.ErrorList())
 		errors.append(message)
+
+
+class ComentarForm(forms.Form):
+	texto = forms.CharField(required=True)

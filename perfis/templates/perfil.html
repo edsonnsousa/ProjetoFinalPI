@@ -27,11 +27,11 @@
             Nome da empresa: <strong>{{ perfil.nome_empresa }}</strong>
         </address>
 
-            {% if perfil.id == perfil_logado.id %}
-            <a class="btn btn-default" href="{% url 'transacao' %}">
-                Testar transações atômicas
-            </a>
-            {% endif %}
+{#            {% if perfil.id == perfil_logado.id %}#}
+{#            <a class="btn btn-default" href="{% url 'transacao' %}">#}
+{#                Testar transações atômicas#}
+{#            </a>#}
+{#            {% endif %}#}
 
 
             {% if posso_convidar %}
@@ -148,6 +148,7 @@
                 </div>
 
                 <h5>{{postagem.data_publicacao}}</h5>
+
             </li>
 
             {% endif %}
@@ -331,44 +332,44 @@
 
     {% endif %}
 
-<script type="text/javascript">
-    var modalConfirm = function(callback){
-  
-  $(".btn-confirm").on("click", function(){
-    $("#mi-modal").modal('show');
-  });
+    <script type="text/javascript">
+        var modalConfirm = function (callback) {
 
-  $("#modal-btn-si").on("click", function(){
-    callback(true);
-    $("#mi-modal").modal('hide');
-  });
-  
-  $("#modal-btn-no").on("click", function(){
-    callback(false);
-    $("#mi-modal").modal('hide');
-  });
-};
+            $(".btn-confirm").on("click", function () {
+                $("#mi-modal").modal('show');
+            });
 
-modalConfirm(function(confirm){
-  
-});
-</script>
+            $("#modal-btn-si").on("click", function () {
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+
+            $("#modal-btn-no").on("click", function () {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function (confirm) {
+
+        });
+    </script>
 
 
-<script type="text/javascript">
-    var modalConfirm2 = function(callback){
-  
-  $("#btn-confirm").on("click", function(){
-    $("#mi-modal2").modal('show');
-  });
+    <script type="text/javascript">
+        var modalConfirm2 = function (callback) {
 
-  
-};
+            $("#btn-confirm").on("click", function () {
+                $("#mi-modal2").modal('show');
+            });
 
-modalConfirm2(function(confirm){
-  
-});
-</script>
+
+        };
+
+        modalConfirm2(function (confirm) {
+
+        });
+    </script>
 
 
 
